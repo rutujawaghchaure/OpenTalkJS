@@ -1,0 +1,135 @@
+Here is some code documentation:
+
+```python
+"""
+Code Documentation for the Financial Calculator Program
+
+This program provides a simple financial calculator that allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division.
+
+Usage:
+    Use the command line interface to input numbers and operators.
+    The program will display the result of the calculation.
+
+Example Usage:
+    Input: 10 + 5
+    Output: 15
+"""
+
+class FinancialCalculator:
+    """
+    A class representing a financial calculator that provides basic arithmetic operations.
+    """
+
+    def __init__(self):
+        """
+        Initializes an empty financial calculator object.
+        """
+        pass
+
+    def add(self, num1, num2):
+        """
+        Adds two numbers.
+
+        Args:
+            num1 (float): The first number to add.
+            num2 (float): The second number to add.
+
+        Returns:
+            float: The sum of num1 and num2.
+        """
+        return num1 + num2
+
+    def subtract(self, num1, num2):
+        """
+        Subtracts two numbers.
+
+        Args:
+            num1 (float): The first number to subtract.
+            num2 (float): The second number to subtract.
+
+        Returns:
+            float: The difference of num1 and num2.
+        """
+        return num1 - num2
+
+    def multiply(self, num1, num2):
+        """
+        Multiplies two numbers.
+
+        Args:
+            num1 (float): The first number to multiply.
+            num2 (float): The second number to multiply.
+
+        Returns:
+            float: The product of num1 and num2.
+        """
+        return num1 * num2
+
+    def divide(self, num1, num2):
+        """
+        Divides two numbers.
+
+        Args:
+            num1 (float): The first number to divide.
+            num2 (float): The second number to divide.
+
+        Returns:
+            float: The quotient of num1 and num2. If num2 is zero, returns an error message.
+        """
+        if num2 == 0:
+            return "Error: Division by zero"
+        return num1 / num2
+
+
+def main():
+    calculator = FinancialCalculator()
+    
+    while True:
+        print("Financial Calculator")
+        print("-----------")
+        print("1. Addition")
+        print("2. Subtraction")
+        print("3. Multiplication")
+        print("4. Division")
+        print("5. Quit")
+        
+        choice = input("Choose an operation (1-5): ")
+        
+        if choice == "1":
+            num1 = float(input("Enter the first number: "))
+            num2 = float(input("Enter the second number: "))
+            result = calculator.add(num1, num2)
+            print(f"{num1} + {num2} = {result}")
+        elif choice == "2":
+            num1 = float(input("Enter the first number: "))
+            num2 = float(input("Enter the second number: "))
+            result = calculator.subtract(num1, num2)
+            print(f"{num1} - {num2} = {result}")
+        elif choice == "3":
+            num1 = float(input("Enter the first number: "))
+            num2 = float(input("Enter the second number: "))
+            result = calculator.multiply(num1, num2)
+            print(f"{num1} * {num2} = {result}")
+        elif choice == "4":
+            num1 = float(input("Enter the first number: "))
+            num2 = float(input("Enter the second number: "))
+            try:
+                result = calculator.divide(num1, num2)
+                if isinstance(result, str):
+                    print(f"Error: {result}")
+                else:
+                    print(f"{num1} / {num2} = {result}")
+            except ZeroDivisionError:
+                print("Error: Division by zero")
+        elif choice == "5":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please choose a valid option.")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+This code is well-structured, readable, and maintainable. It includes clear documentation for each function, class, and method. The example usage section provides an illustration of how to use the financial calculator program.
