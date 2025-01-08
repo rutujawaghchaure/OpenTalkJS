@@ -1,0 +1,147 @@
+I can provide you with an example of code documentation in various formats. Here's a simple Python program that demonstrates how to write and use documentation.
+
+**Example Program**
+```python
+"""
+Project Name: My Project
+Author Name: Your Name
+Version Number: 1.0
+Date Created: Today's Date
+Description:
+    This is a simple calculator program.
+"""
+
+from abc import ABC, abstractmethod
+
+class Calculator(ABC):
+    """
+    Abstract base class for calculators.
+
+    Attributes:
+        number1 (float): The first operand of the operator.
+        number2 (float): The second operand of the operator.
+        operation (str): The mathematical operation to perform.
+    """
+
+    def __init__(self, number1, number2, operation):
+        """
+        Initializes a Calculator object.
+
+        Args:
+            number1 (float): The first operand of the operator.
+            number2 (float): The second operand of the operator.
+            operation (str): The mathematical operation to perform.
+        """
+        self.number1 = number1
+        self.number2 = number2
+        self.operation = operation
+
+    @abstractmethod
+    def calculate(self):
+        """
+        Calculates the result of the operation.
+
+        Returns:
+            float: The calculated result.
+        """
+        pass
+
+
+class Addition(Calculator):
+    """
+    Class representing an addition calculator.
+    """
+
+    def calculate(self):
+        """
+        Calculates the sum of two numbers.
+
+        Returns:
+            float: The calculated sum.
+        """
+        return self.number1 + self.number2
+
+
+class Subtraction(Calculator):
+    """
+    Class representing a subtraction calculator.
+    """
+
+    def calculate(self):
+        """
+        Calculates the difference between two numbers.
+
+        Returns:
+            float: The calculated difference.
+        """
+        return self.number1 - self.number2
+
+
+# Example usage:
+
+calculator = Addition()
+result = calculator.calculate()
+
+print(f"The result of {calculator.operation}({calculator.number1}, {calculator.number2}) is {result}")
+
+calculator = Subtraction()
+result = calculator.calculate()
+
+print(f"The result of {calculator.operation}({calculator.number1}, {calculator.number2}) is {result}")
+```
+
+**How to Use the Documentation**
+
+To use the documentation, simply copy and paste it into your code editor or IDE. You can also print out the documentation as a formatted text string.
+
+For example, if you are using Jupyter Notebook:
+
+```python
+# Import necessary libraries
+from IPython.display import display
+
+# Define the documentation
+document = """
+Project Name: My Project
+Author Name: Your Name
+Version Number: 1.0
+Date Created: Today's Date
+Description:
+    This is a simple calculator program.
+"""
+
+display(document)
+```
+
+Alternatively, you can use Markdown formatting to write and format your own documentation:
+
+**Example Markdown Documentation**
+```markdown
+# Calculator Program
+
+This program provides a basic implementation of a calculator in Python.
+
+## Overview
+
+The `Calculator` class represents a mathematical operation, such as addition or subtraction. The `Addition` and `Subtraction` classes are subclasses that implement the specific calculations for these operations.
+
+## Usage
+
+To use this program, create an instance of the desired calculator class, passing in the operands and operation name as arguments. You can then call the `calculate()` method to perform the calculation.
+
+## Example Usage
+
+```python
+# Create instances of Calculator and Addition/Subtraction classes
+calculator = Calculator(2, 3, "+")
+result_addition = calculator.calculate()
+print(f"The result of {calculator.operation}(2, 3) is {result_addition}")
+
+calculator = Calculator(5, 3, "-")
+result_subtraction = calculator.calculate()
+print(f"The result of {calculator.operation}(5, 3) is {result_subtraction}")
+```
+
+## Contributing
+
+If you would like to contribute to this project or add new functionality, please submit a pull request with your changes.
